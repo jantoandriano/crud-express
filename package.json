@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "engines":{
-    "node": "10x"
+    "node": "10.x"
   },
   "author": "",
   "license": "ISC",

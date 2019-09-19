@@ -11,7 +11,7 @@ app.use("/users",users)
 
 
 // listen to port and running ther server
-const port = 4000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server listening at ${port}`);
 });

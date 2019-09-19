@@ -20,9 +20,9 @@ module.exports = {
     res.json(user);
   },
   deleteUser: (req, res, next) => {
-    let id = parseInt(req.params.id)
+    let idtoremove = parseInt(req.params.id)
     let deletedUser = users.filter(user => {  
-        user.id !== id
+        return user.id !== idtoremove
     })
     res.send(deletedUser)
         

@@ -3,10 +3,12 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const users = require("./routes/users/users__routes");
+const cors = require("cors");
 
 // middleware
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors())
 
 // list of route
 app.use("/users",users)

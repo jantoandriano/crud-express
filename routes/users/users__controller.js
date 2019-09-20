@@ -2,7 +2,7 @@ const users = require("../../models/users__model");
 
 module.exports = {
   getUsers: (req, res, next) => {
-    res.json(users);
+    res.send(users);
   },
 
 
@@ -13,9 +13,9 @@ module.exports = {
       lastName: req.body.lastName
     };
     users.push(newUser);
+    res.send(users)
     res.json({ message : "User created"});
   },
-
 
 
   getSingleUser: (req, res, next) => {
@@ -32,8 +32,6 @@ module.exports = {
     let deletedUser = users.filter(user => user.id !== idtoremove)
     res.send(deletedUser)
   },
-
-
 
   updateUser: (req, res, next) => {
     let id = parseInt(req.params.id)

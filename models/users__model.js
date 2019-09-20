@@ -2,7 +2,7 @@
 const users = [
     {
         id: 1,
-        firstName: 'Janto',
+        firstName: 'janto',
         lastName: "motulo"
     },
     {

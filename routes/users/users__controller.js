@@ -1,9 +1,11 @@
-const users = require("../models/users");
+const users = require("../../models/users__model");
 
 module.exports = {
   getUsers: (req, res, next) => {
     res.json(users);
   },
+
+
   createUser: (req, res, next) => {
     let newUser = {
       id: users.length + 1,
@@ -13,20 +15,26 @@ module.exports = {
     users.push(newUser);
     res.json({ message : "User created"});
   },
+
+
+
   getSingleUser: (req, res, next) => {
     const user = users.find(data => data.id === parseInt(req.params.id));
     if (!user)
       return res.status(404).send("The game with the given ID was not found.");
     res.json(user);
   },
+
+
+
   deleteUser: (req, res, next) => {
     let idtoremove = parseInt(req.params.id)
-    let deletedUser = users.filter(user => {  
-        return user.id !== idtoremove
-    })
+    let deletedUser = users.filter(user => user.id !== idtoremove)
     res.send(deletedUser)
-        
   },
+
+
+
   updateUser: (req, res, next) => {
     let id = parseInt(req.params.id)
     let userFound;

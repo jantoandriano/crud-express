@@ -7,8 +7,8 @@ const users = [
     },
     {
         id: 2,
-        firstName: "janti",
-        lastName: "motulo"
+        firstName: "gloria",
+        lastName: "ngangi"
     }
 ];
 
